@@ -56,6 +56,15 @@ PRODUCT_COPY_FILES += \
     vendor/unholy/prebuilt/common/bin/sysinit:system/bin/sysinit \
     vendor/unholy/prebuilt/common/etc/init.d.rc:root/init.d.rc
 
+# userinit support
+PRODUCT_COPY_FILES += \
+    vendor/unholy/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+
+# SuperSU
+PRODUCT_COPY_FILES += \
+    vendor/unholy/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    vendor/unholy/prebuilt/common/etc/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/unholy/prebuilt/common/addon.d/50-unholy.sh:system/addon.d/50-unholy.sh \
