@@ -33,6 +33,10 @@ PRODUCT_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
 
+# Include librsjni explicitly to workaround GMS issue
+PRODUCT_PACKAGES += \
+    librsjni
+
 # Bootanimation
 PRODUCT_COPY_FILES += \
     vendor/unholy/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
