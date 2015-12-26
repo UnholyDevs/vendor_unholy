@@ -12,3 +12,8 @@
 # limitations under the License.
 
 include vendor/legion/configs/main.mk
+
+# Telephony packages
+PRODUCT_PACKAGES += \
+    Stk \
+    CellBroadcastReceiver
