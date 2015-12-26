@@ -17,3 +17,7 @@ include vendor/unholy/configs/main.mk
 PRODUCT_PACKAGES += \
     Stk \
     CellBroadcastReceiver
+
+# Allow tethering without provisioning app
+PRODUCT_PROPERTY_OVERRIDES += \
+	net.tethering.noprovisioning=true
