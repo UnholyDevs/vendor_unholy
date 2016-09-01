@@ -120,8 +120,48 @@ function build_images {
 }
 
 function repo_device_sync {
+	# SHAMU
+	if [ $configb = "shamu" ]; then
+		if [ -d device/moto/shamu ]; then
+			cd device/moto/shamu
+			git pull -f
+			cd ~/$unholy_dir
+		else
+			repo_clone
+		fi
+
+		if [ -d kernel/moto/shamu ]; then
+			cd kernel/moto/shamu
+			git pull -f
+			cd ~/$unholy_dir
+		else
+			repo_clone
+		fi
+
+		if [ -d vendor/moto/shamu ]; then
+			cd vendor/moto/shamu
+			git pull -f
+			cd ~/$unholy_dir
+		else
+			repo_clone
+		fi
+	fi
 
 function repo_clone {
+	if [ $configb = "shamu" ]; then
+		if ! [ -d device/motorola/shamu ]; then
+			echo -e "${bldred}N6: No device tree, downloading...${txtrst}"
+			git clone https://github.com/unholydevs/device_motorola_shamu.git device/motorola/shamu
+		fi
+		if ! [ -d kernel/motorola/shamu ]; then
+			echo -e "${bldred}N6: No kernel sources, downloading...${txtrst}"
+			git clone https://github.com/unholydevs/kernel_motorola_shamu.git kernel/motorola/shamu
+		fi
+		if ! [ -d vendor/motorola/shamu ]; then
+			echo -e "${bldred}N6: No vendor, downloading...${txtrst}"
+			git clone https://github.com/unholydevs/vendor_motorola_shamu.git vendor/motorola/shamu
+		fi
+	fi
 
 function sync_unholy {
 	if [ $sync_repo_devices = true ]; then
@@ -163,10 +203,15 @@ function setccache {
 
 function set_device {
 while read -p "${grn}Please choose your device:${txtrst}
+ 1. shamu (Google Nexus 6)
  3. Abort
 :> " cchoice
 do
 case "$cchoice" in
+	1 )
+		configb=shamu
+		break
+		;;
 	3 )
 		break
 		;;
