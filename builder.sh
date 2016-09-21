@@ -26,8 +26,6 @@ fi
 
 cpucores=$(cat /proc/cpuinfo | grep 'model name' | sed -e 's/.*: //' | wc -l)
 
-#export USE_PREBUILT_CHROMIUM=1
-
 configb=null
 build_img=null
 othermsg=""
@@ -48,6 +46,11 @@ function build_unholy {
 		echo "Device is not set!"
 		break
 	fi
+	if [ -f builder_start.sh ]; then
+		echo -e "Running start user script..."
+		. builder_start.sh
+		echo -e "Done!"
+	fi
 	repo_clone
 	echo -e "${bldblu}Setting up environment ${txtrst}"
 	. build/envsetup.sh
@@ -67,6 +70,11 @@ function build_unholy {
 		echo -e "${bldred}Error copyng zip!${txtrst}"
 	fi
 	cd ~/$unholy_dir
+	if [ -f builder_end.sh ]; then
+		echo -e "Running end user script..."
+		. builder_end.sh
+		echo -e "Done!"
+	fi
 	echo "${bldgrn}Total time elapsed: ${txtrst}${grn}$(echo "($res2 - $res1) / 60"|bc ) minutes ($(echo "$res2 - $res1"|bc ) seconds) ${txtrst}"
 }
 
@@ -397,7 +405,7 @@ case "$cchoice" in
 		clear
 		;;
 	10 )
-		sudo apt-get install bison build-essential curl flex lib32ncurses5-dev lib32readline-gplv2-dev lib32z1-dev libesd0-dev libncurses5-dev libsdl1.2-dev libwxgtk2.8-dev libxml2 libxml2-utils lzop openjdk-7-jdk openjdk-7-jre pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev git-core make phablet-tools gperf
+		sudo apt-get install bison build-essential curl flex lib32ncurses5-dev lib32z1-dev libesd0-dev libncurses5-dev libsdl1.2-dev libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev git-core make phablet-tools gperf
 		othermsg="Soft installed"
 		clear
 		;;
