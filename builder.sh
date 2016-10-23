@@ -62,12 +62,29 @@ function build_unholy {
 	make otapackage -j$cpucores 2<&1 | tee builder.log
 	res2=$(date +%s.%N)
 	cd out/target/product/$configb
-	FILE=$(ls *.zip | grep Unholy)
+	FILE=Unholy-$configb-`date +"%Y%m%d"`.zip
+	FILE2=unholy_$configb-Changelog.txt
 	if [ -f ./$FILE ]; then
 		echo -e "${bldgrn}Copyng zip file...${txtrst}"
-		cp $FILE ~/$unholy_build_dir/$FILE
+		if [ -f ~/$unholy_build_dir/$FILE ]; then
+			rm ~/$unholy_build_dir/$FILE
+			cp $FILE ~/$unholy_build_dir/$FILE
+		else
+			cp $FILE ~/$unholy_build_dir/$FILE
+		fi
 	else
 		echo -e "${bldred}Error copyng zip!${txtrst}"
+	fi
+	if [ -f ./$FILE2 ]; then
+		echo -e "${bldgrn}Copyng changelog...${txtrst}"
+		if [ -f ~/$unholy_build_dir/$FILE2 ]; then
+			rm ~/$unholy_build_dir/$FILE2
+			cp $FILE2 ~/$unholy_build_dir/$FILE2
+		else
+			cp $FILE2 ~/$unholy_build_dir/$FILE2
+		fi
+	else
+		echo -e "${bldred}Error copyng changelog!${txtrst}"
 	fi
 	cd ~/$unholy_dir
 	if [ -f builder_end.sh ]; then
@@ -405,7 +422,9 @@ case "$cchoice" in
 		clear
 		;;
 	10 )
-		sudo apt-get install bison build-essential curl flex lib32ncurses5-dev lib32z1-dev libesd0-dev libncurses5-dev libsdl1.2-dev libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev git-core make phablet-tools gperf
+		sudo add-apt-repository ppa:openjdk-r/ppa
+		sudo apt-get update
+		sudo apt-get install bison build-essential curl ccache flex lib32ncurses5-dev lib32z1-dev libesd0-dev libncurses5-dev libsdl1.2-dev libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev git-core make phablet-tools gperf openjdk-8-jdk
 		othermsg="Soft installed"
 		clear
 		;;
