@@ -28,6 +28,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Include overlays
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/unholy/overlay/common
+	
+# Include explicitly to work around Facelock issues
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full
 
 # Bootanimation
 PRODUCT_COPY_FILES += \
