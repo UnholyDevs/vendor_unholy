@@ -1,4 +1,4 @@
-# Copyright (C) 2016 UnholyDevs
+# Copyright (C) 2017 Unholy Developers
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -21,3 +21,6 @@ PRODUCT_PACKAGES += \
 # Allow tethering without provisioning app
 PRODUCT_PROPERTY_OVERRIDES += \
 	net.tethering.noprovisioning=true
+
+# Pull in Prebuilt applications for phones
+$(call inherit-product-if-exists, vendor/prebuilt/prebuilt.mk)
