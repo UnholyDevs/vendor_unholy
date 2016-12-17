@@ -21,7 +21,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.error.receiver.system.apps=com.google.android.gms \
     ro.setupwizard.enterprise_mode=1 \
-    ro.com.android.dataroaming=false
+    ro.com.android.dataroaming=false \
+    ro.setupwizard.rotation_locked=true \
+    ro.opa.eligible_device=true
 
 # Include overlays
 PRODUCT_PACKAGE_OVERLAYS += \
