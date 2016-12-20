@@ -1,0 +1,2 @@
+add_lunch_combo legion_angler-userdebug
+add_lunch_combo legion_angler-user
