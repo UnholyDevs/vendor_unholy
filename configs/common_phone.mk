@@ -1,4 +1,4 @@
-# Copyright (C) 2016 Legion666
+# Copyright (C) 2016 UnholyDevs
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -11,7 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/legion/configs/main.mk
+include vendor/unholy/configs/main.mk
 
 # Telephony packages
 PRODUCT_PACKAGES += \

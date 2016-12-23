@@ -13,4 +13,4 @@
 
 # Basic sepolicy for the Legion
 BOARD_SEPOLICY_DIRS += \
-    vendor/legion/sepolicy
+    vendor/unholy/sepolicy

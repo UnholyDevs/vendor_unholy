@@ -1,4 +1,4 @@
-# Copyright (C) 2016 Legion666
+# Copyright (C) 2016 UnholyDevs
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -15,7 +15,7 @@
 $(call inherit-product, device/huawei/angler/aosp_angler.mk)
 
 # Inherit common configuration
-include vendor/legion/configs/common_phone.mk
+include vendor/unholy/configs/common_phone.mk
 
 # Override AOSP build properties
 PRODUCT_NAME := angler

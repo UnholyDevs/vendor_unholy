@@ -1,4 +1,4 @@
-# Copyright (C) 2016 Legion666
+# Copyright (C) 2016 UnholyDevs
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Include overlays
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/legion/overlay/common
+    vendor/unholy/overlay/common
 
 # Main Required Packages
 PRODUCT_PACKAGES += \
