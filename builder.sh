@@ -120,7 +120,7 @@ function build_images {
 }
 
 function repo_device_sync {
-	# SHAMU
+	# Shamu
 	if [ $configb = "shamu" ]; then
 		if [ -d device/motorola/shamu ]; then
 			cd device/motorola/shamu
@@ -146,6 +146,32 @@ function repo_device_sync {
 			repo_clone
 		fi
 	fi
+	# Angler
+	if [ $configb = "angler" ]; then
+		if [ -d device/huawei/angler ]; then
+			cd device/huawei/angler
+			git pull -f
+			cd ~/$unholy_dir
+		else
+			repo_clone
+		fi
+
+		if [ -d kernel/huawei/angler ]; then
+			cd kernel/huawei/angler
+			git pull -f
+			cd ~/$unholy_dir
+		else
+			repo_clone
+		fi
+
+		if [ -d vendor/huawei/angler ]; then
+			cd vendor/huawei/angler
+			git pull -f
+			cd ~/$unholy_dir
+		else
+			repo_clone
+		fi
+	fi
 
 function repo_clone {
 	if [ $configb = "shamu" ]; then
@@ -160,6 +186,20 @@ function repo_clone {
 		if ! [ -d vendor/motorola/shamu ]; then
 			echo -e "${bldred}N6: No vendor, downloading...${txtrst}"
 			git clone https://github.com/unholydevs/vendor_motorola_shamu.git vendor/motorola/shamu
+		fi
+	fi
+	if [ $configb = "angler" ]; then
+		if ! [ -d device/huawei/angler ]; then
+			echo -e "${bldred}N6P: No device tree, downloading...${txtrst}"
+			git clone https://github.com/unholydevs/device_huawei_angler.git device/huawei/angler
+		fi
+		if ! [ -d kernel/huawei/angler ]; then
+			echo -e "${bldred}N6P: No kernel sources, downloading...${txtrst}"
+			git clone https://github.com/unholydevs/kernel_huawei_angler.git kernel/huawei/angler
+		fi
+		if ! [ -d vendor/huawei/angler ]; then
+			echo -e "${bldred}N6P: No vendor, downloading...${txtrst}"
+			git clone https://github.com/unholydevs/vendor_huawei.git vendor/huawei
 		fi
 	fi
 
@@ -204,12 +244,17 @@ function setccache {
 function set_device {
 while read -p "${grn}Please choose your device:${txtrst}
  1. shamu (Google Nexus 6)
+ 2. angler (Nexus 6P)
  3. Abort
 :> " cchoice
 do
 case "$cchoice" in
 	1 )
 		configb=shamu
+		break
+		;;
+	2 )
+		configb=angler
 		break
 		;;
 	3 )
