@@ -177,29 +177,29 @@ function repo_clone {
 	if [ $configb = "shamu" ]; then
 		if ! [ -d device/motorola/shamu ]; then
 			echo -e "${bldred}N6: No device tree, downloading...${txtrst}"
-			git clone https://github.com/unholydevs/device_motorola_shamu.git device/motorola/shamu
+			git clone https://github.com/unholydevs/device_motorola_shamu.git -b n7 device/motorola/shamu
 		fi
 		if ! [ -d kernel/motorola/shamu ]; then
 			echo -e "${bldred}N6: No kernel sources, downloading...${txtrst}"
-			git clone https://github.com/unholydevs/kernel_motorola_shamu.git kernel/motorola/shamu
+			git clone https://github.com/unholydevs/kernel_motorola_shamu.git -b n7 kernel/motorola/shamu
 		fi
 		if ! [ -d vendor/motorola/shamu ]; then
 			echo -e "${bldred}N6: No vendor, downloading...${txtrst}"
-			git clone https://github.com/unholydevs/vendor_motorola_shamu.git vendor/motorola/shamu
+			git clone https://github.com/unholydevs/vendor_motorola.git -b n7 vendor/motorola
 		fi
 	fi
 	if [ $configb = "angler" ]; then
 		if ! [ -d device/huawei/angler ]; then
 			echo -e "${bldred}N6P: No device tree, downloading...${txtrst}"
-			git clone https://github.com/unholydevs/device_huawei_angler.git device/huawei/angler
+			git clone https://github.com/unholydevs/device_huawei_angler.git -b n7 device/huawei/angler
 		fi
 		if ! [ -d kernel/huawei/angler ]; then
 			echo -e "${bldred}N6P: No kernel sources, downloading...${txtrst}"
-			git clone https://github.com/unholydevs/kernel_huawei_angler.git kernel/huawei/angler
+			git clone https://github.com/unholydevs/kernel_huawei_angler.git -b n7 kernel/huawei/angler
 		fi
 		if ! [ -d vendor/huawei/angler ]; then
 			echo -e "${bldred}N6P: No vendor, downloading...${txtrst}"
-			git clone https://github.com/unholydevs/vendor_huawei.git vendor/huawei
+			git clone https://github.com/unholydevs/vendor_huawei.git -b n7 vendor/huawei
 		fi
 	fi
 
