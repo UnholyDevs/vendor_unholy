@@ -172,6 +172,32 @@ function repo_device_sync {
 			repo_clone
 		fi
 	fi
+	# Marlin
+	if [ $configb = "marlin" ]; then
+		if [ -d device/google/marlin ]; then
+			cd device/google/marlin
+			git pull -f
+			cd ~/$unholy_dir
+		else
+			repo_clone
+		fi
+
+		if [ -d kernel/google/marlin ]; then
+			cd kernel/google/marlin
+			git pull -f
+			cd ~/$unholy_dir
+		else
+			repo_clone
+		fi
+
+		if [ -d vendor/google/marlin ]; then
+			cd vendor/google/marlin
+			git pull -f
+			cd ~/$unholy_dir
+		else
+			repo_clone
+		fi
+	fi
 
 function repo_clone {
 	if [ $configb = "shamu" ]; then
@@ -200,6 +226,20 @@ function repo_clone {
 		if ! [ -d vendor/huawei/angler ]; then
 			echo -e "${bldred}N6P: No vendor, downloading...${txtrst}"
 			git clone https://github.com/unholydevs/vendor_huawei.git -b n7 vendor/huawei
+		fi
+	fi
+	if [ $configb = "marlin" ]; then
+		if ! [ -d device/google/marlin ]; then
+			echo -e "${bldred}Marlin: No device tree, downloading...${txtrst}"
+			git clone https://github.com/unholydevs/device_google_marlin.git -b n7 device/google/marlin
+		fi
+		if ! [ -d kernel/google/marlin ]; then
+			echo -e "${bldred}Marlin: No kernel sources, downloading...${txtrst}"
+			git clone https://github.com/unholydevs/kernel_google_marlin.git -b n7 kernel/google/marlin
+		fi
+		if ! [ -d vendor/google/marlin ]; then
+			echo -e "${bldred}Marlin: No vendor, downloading...${txtrst}"
+			git clone https://github.com/unholydevs/vendor_google.git -b n7 vendor/google
 		fi
 	fi
 
@@ -245,7 +285,8 @@ function set_device {
 while read -p "${grn}Please choose your device:${txtrst}
  1. shamu (Google Nexus 6)
  2. angler (Nexus 6P)
- 3. Abort
+ 3. marlin (Pixel XL)
+ 4. Abort
 :> " cchoice
 do
 case "$cchoice" in
@@ -258,6 +299,10 @@ case "$cchoice" in
 		break
 		;;
 	3 )
+		configb=marlin
+		break
+		;;
+	4 )
 		break
 		;;
 	* )
