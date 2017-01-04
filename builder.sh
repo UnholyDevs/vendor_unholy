@@ -122,24 +122,24 @@ function build_images {
 function repo_device_sync {
 	# SHAMU
 	if [ $configb = "shamu" ]; then
-		if [ -d device/moto/shamu ]; then
-			cd device/moto/shamu
+		if [ -d device/motorola/shamu ]; then
+			cd device/motorola/shamu
 			git pull -f
 			cd ~/$unholy_dir
 		else
 			repo_clone
 		fi
 
-		if [ -d kernel/moto/shamu ]; then
-			cd kernel/moto/shamu
+		if [ -d kernel/motorola/shamu ]; then
+			cd kernel/motorola/shamu
 			git pull -f
 			cd ~/$unholy_dir
 		else
 			repo_clone
 		fi
 
-		if [ -d vendor/moto/shamu ]; then
-			cd vendor/moto/shamu
+		if [ -d vendor/motorola/shamu ]; then
+			cd vendor/motorola/shamu
 			git pull -f
 			cd ~/$unholy_dir
 		else
