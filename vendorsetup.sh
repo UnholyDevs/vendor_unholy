@@ -1,2 +1,0 @@
-add_lunch_combo unholy_angler-userdebug
-add_lunch_combo unholy_angler-user
