@@ -267,6 +267,7 @@ function repo_clone {
 			git clone https://github.com/unholydevs/vendor_google.git -b n7 vendor/google
 		fi
 	fi
+}
 
 function sync_unholy {
 	if [ $sync_repo_devices = true ]; then
