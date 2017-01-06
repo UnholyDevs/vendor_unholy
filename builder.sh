@@ -223,6 +223,7 @@ function repo_device_sync {
 			repo_clone
 		fi
 	fi
+}
 
 function repo_clone {
 	if [ $configb = "shamu" ]; then
