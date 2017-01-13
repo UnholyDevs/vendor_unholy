@@ -18,7 +18,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
     persist.sys.dun.override=0 \
     ro.build.selinux=1 \
-    ro.adb.secure=0
+    ro.adb.secure=0 \
+    persist.service.adb.enable=1
 
 $(call inherit-product, vendor/unholy/configs/main.mk)
 
