@@ -1,6 +1,6 @@
 #!/bin/bash
 # Copyright (C) 2016 Nitrogen Project
-#
+# 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -65,7 +65,7 @@ function build_unholy {
 	FILE=Unholy-$configb-`date +"%Y%m%d"`.zip
 	FILE2=unholy_$configb-Changelog.txt
 	if [ -f ./$FILE ]; then
-		echo -e "${bldgrn}Copyng zip file...${txtrst}"
+		echo -e "${bldgrn}Copying zip file...${txtrst}"
 		if [ -f ~/$unholy_build_dir/$FILE ]; then
 			rm ~/$unholy_build_dir/$FILE
 			cp $FILE ~/$unholy_build_dir/$FILE
@@ -73,10 +73,10 @@ function build_unholy {
 			cp $FILE ~/$unholy_build_dir/$FILE
 		fi
 	else
-		echo -e "${bldred}Error copyng zip!${txtrst}"
+		echo -e "${bldred}Error copying zip!${txtrst}"
 	fi
 	if [ -f ./$FILE2 ]; then
-		echo -e "${bldgrn}Copyng changelog...${txtrst}"
+		echo -e "${bldgrn}Copying changelog...${txtrst}"
 		if [ -f ~/$unholy_build_dir/$FILE2 ]; then
 			rm ~/$unholy_build_dir/$FILE2
 			cp $FILE2 ~/$unholy_build_dir/$FILE2
@@ -84,7 +84,7 @@ function build_unholy {
 			cp $FILE2 ~/$unholy_build_dir/$FILE2
 		fi
 	else
-		echo -e "${bldred}Error copyng changelog!${txtrst}"
+		echo -e "${bldred}Error copying changelog!${txtrst}"
 	fi
 	cd ~/$unholy_dir
 	if [ -f builder_end.sh ]; then
@@ -310,7 +310,7 @@ function setccache {
 
 function set_device {
 while read -p "${grn}Please choose your device:${txtrst}
- 1. shamu (Google Nexus 6)
+ 1. shamu  (Nexus 6)
  2. angler (Nexus 6P)
  3. marlin (Pixel XL)
  4. Abort
@@ -351,19 +351,19 @@ function mainmenu {
 		device_text="Device: $configb"
 	fi
 	if [ $ccachetrue = "yes" ]; then
-		ccachetext="Use cchache for build: yes"
+		ccachetext="Use ccache for build: yes"
 	else
-		ccachetext="Use cchache for build: no"
+		ccachetext="Use ccache for build: no"
 	fi
-while read -p "${bldcya}unholy OS 2.0 builder script v. $ver_script ${txtrst}
+while read -p "${bldcya}unholy builder script v. $ver_script ${txtrst}
   $device_text
   $ccachetext
   Messages:
   $othermsg
-  
+
 ${grn}Please choose your option:${txtrst}
   1. Clean build files
-  2. Build rom to zip (ota package)
+  2. Build rom to zip
   3. Build boot.img
   4. Build recovery.img
   5. Build system.img
@@ -379,7 +379,7 @@ do
 case "$cchoice" in
 	1 )
 		make clean
-		othermsg="All the compiled files have been deleted."
+		othermsg="All of the compiled files have been deleted."
 		clear
 		;;
 	2 )
