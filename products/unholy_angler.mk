@@ -19,7 +19,6 @@ TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
 # Inherit common unholiness
-$(call inherit-product, vendor/unholy/products/angler.mk)
 $(call inherit-product, vendor/unholy/configs/unholy_common.mk)
 
 # Override AOSP build properties
