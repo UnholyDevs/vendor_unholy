@@ -11,6 +11,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Inherit common unholiness
+$(call inherit-product, vendor/unholy/configs/unholy_common.mk)
+
 # Inherit device configuration
 $(call inherit-product, device/huawei/angler/aosp_angler.mk)
 
@@ -18,11 +21,8 @@ $(call inherit-product, device/huawei/angler/aosp_angler.mk)
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
-# Inherit common unholiness
-$(call inherit-product, vendor/unholy/configs/unholy_common.mk)
-
 # Override AOSP build properties
-PRODUCT_NAME := unholy_angler
+PRODUCT_NAME := angler
 PRODUCT_DEVICE := angler
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := Nexus 6P
