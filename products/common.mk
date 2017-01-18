@@ -49,20 +49,3 @@ PRODUCT_COPY_FILES += \
     vendor/unholy/prebuilt/common/addon.d/50-unholy.sh:system/addon.d/50-unholy.sh \
     vendor/unholy/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/unholy/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions
-
-# Versioning System
-ANDROID_VERSION = 7.1.1
-UD_VERSION = v1.0
-ifndef UD_BUILD_TYPE
-    UD_BUILD_TYPE := UNOFFICIAL
-    PLATFORM_VERSION_CODENAME := UNOFFICIAL
-endif
-
-# Set all versions
-UD_VERSION := UD_$(UD_BUILD)_$(ANDROID_VERSION)_$(shell date -u +%Y%m%d-%H%M).$(UD_VERSION)-$(UD_BUILD_TYPE)
-UD_MOD_VERSION := UD_$(UD_BUILD)_$(ANDROID_VERSION)_$(shell date -u +%Y%m%d-%H%M).$(UD_VERSION)-$(UD_BUILD_TYPE)
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    BUILD_DISPLAY_ID=$(BUILD_ID) \
-    ro.du.version=$(DU_VERSION) \
-    ro.mod.version=$(DU_BUILD_TYPE)-v11.0
