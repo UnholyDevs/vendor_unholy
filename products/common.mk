@@ -21,6 +21,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1 \
     ro.adb.secure=0
 
+# Enable Google Assistant on all devices.
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opa.eligible_device=true
+
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/unholy/overlay/common
