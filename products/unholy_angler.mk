@@ -22,7 +22,7 @@ TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
 # Override AOSP build properties
-PRODUCT_NAME := angler
+PRODUCT_NAME := unholy_angler
 PRODUCT_DEVICE := angler
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := Nexus 6P
