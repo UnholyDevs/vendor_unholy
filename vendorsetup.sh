@@ -1,0 +1,6 @@
+add_lunch_combo unholy_angler-userdebug
+add_lunch_combo unholy_angler-user
+add_lunch_combo unholy_marlin-userdebug
+add_lunch_combo unholy_marlin-user
+add_lunch_combo unholy_shamu-userdebug
+add_lunch_combo unholy_shamu-user

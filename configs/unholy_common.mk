@@ -16,10 +16,23 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.gservices_delay=-1 \
     ro.com.android.dataroaming=false \
     drm.service.enabled=true \
-    net.tethering.noprovisioning=true \
     persist.sys.dun.override=0 \
     ro.build.selinux=1 \
     ro.adb.secure=0
+
+$(call inherit-product, vendor/unholy/configs/main.mk)
+
+# Telephony packages
+PRODUCT_PACKAGES += \
+    Stk \
+    CellBroadcastReceiver
+
+# Allow tethering without provisioning app
+PRODUCT_PROPERTY_OVERRIDES += \
+    net.tethering.noprovisioning=true
+
+# Pull in Prebuilt applications for phones
+$(call inherit-product-if-exists, vendor/prebuilt/prebuilt.mk)
 
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += \
@@ -36,7 +49,6 @@ PRODUCT_COPY_FILES += \
 # Extra packages
 PRODUCT_PACKAGES += \
     LockClock \
-    Stk \
     Terminal
 
 # Init.d script support
