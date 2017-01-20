@@ -15,9 +15,6 @@
 # limitations under the License.
 #
 
-# Inherit pixel gapps
-$(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
-
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
