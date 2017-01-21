@@ -71,8 +71,8 @@ ifndef UD_BUILD_TYPE
 endif
 
 # Set all versions
-UD_VERSION := UnHolyRom_$(UD_BUILD)_$(ANDROID_VERSION)_$(shell date -u +%Y%m%d-%H%M).$(UD_VERSION)-$(UD_BUILD_TYPE)
-UD_MOD_VERSION := UnHolyRom_$(UD_BUILD)_$(ANDROID_VERSION)_$(shell date -u +%Y%m%d-%H%M).$(UD_VERSION)-$(UD_BUILD_TYPE)
+UD_VERSION := UD_$(UD_BUILD)_$(ANDROID_VERSION)_$(shell date -u +%Y%m%d).$(UD_VERSION)-$(UD_BUILD_TYPE)
+UD_MOD_VERSION := UD_$(UD_BUILD)_$(ANDROID_VERSION)_$(shell date -u +%Y%m%d).$(UD_VERSION)-$(UD_BUILD_TYPE)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
