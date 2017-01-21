@@ -29,6 +29,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/unholy/overlay/common
 
+# Versioning system
+include vendor/unholy/configs/version.mk
+
 # Main Required Packages
 PRODUCT_PACKAGES += \
     Launcher3 \
