@@ -29,6 +29,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/unholy/overlay/common
 
+# Bootanimation
+PRODUCT_COPY_FILES += \
+    vendor/unholy/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
+
 # Versioning system
 include vendor/unholy/configs/version.mk
 
