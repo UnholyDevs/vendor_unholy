@@ -49,7 +49,8 @@ PRODUCT_COPY_FILES += \
 # Extra packages
 PRODUCT_PACKAGES += \
     LockClock \
-    Terminal
+    Terminal \
+    masquerade
 
 # Init.d script support
 PRODUCT_COPY_FILES += \
