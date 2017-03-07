@@ -50,7 +50,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     LockClock \
     Terminal \
-    masquerade \
+    ThemeInterfacer \
     OmniStyle
 
 # Init.d script support
