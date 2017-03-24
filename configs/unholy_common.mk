@@ -52,6 +52,17 @@ PRODUCT_PACKAGES += \
     Turbo \
     PixelLauncherPrebuilt
 
+# Only build with Magisk if HAS_ROOT is not equal to false
+ifneq ($(HAS_ROOT),false)
+    # Magisk Manager
+    PRODUCT_PACKAGES += \
+        MagiskManager
+
+    # Copy Magisk zip
+    PRODUCT_COPY_FILES += \
+        vendor/unholy/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
+endif
+
 # DU Utils Library
 PRODUCT_PACKAGES += \
     org.dirtyunicorns.utils
