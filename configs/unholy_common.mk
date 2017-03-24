@@ -49,7 +49,8 @@ PRODUCT_PACKAGES += \
     Terminal \
     ThemeInterfacer \
     OmniStyle \
-    Turbo
+    Turbo \
+    PixelLauncherPrebuilt
 
 # DU Utils Library
 PRODUCT_PACKAGES += \
