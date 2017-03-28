@@ -53,6 +53,13 @@ PRODUCT_PACKAGES += \
     ThemeInterfacer \
     OmniStyle
 
+# DU Utils Library
+PRODUCT_PACKAGES += \
+    org.dirtyunicorns.utils
+
+PRODUCT_BOOT_JARS += \
+    org.dirtyunicorns.utils
+
 # Init.d script support
 PRODUCT_COPY_FILES += \
     vendor/unholy/prebuilt/common/bin/sysinit:system/bin/sysinit \
