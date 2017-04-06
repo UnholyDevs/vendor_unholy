@@ -48,7 +48,8 @@ PRODUCT_PACKAGES += \
     LockClock \
     Terminal \
     ThemeInterfacer \
-    OmniStyle
+    OmniStyle \
+    Turbo
 
 # DU Utils Library
 PRODUCT_PACKAGES += \
