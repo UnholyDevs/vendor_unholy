@@ -31,9 +31,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
 
-# Pull in Prebuilt applications for phones
-$(call inherit-product-if-exists, vendor/prebuilt/prebuilt.mk)
-
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/unholy/overlay/common
