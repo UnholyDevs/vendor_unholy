@@ -42,7 +42,7 @@ PRODUCT_COPY_FILES += \
 
 # Latin IME lib - gesture typing
 PRODUCT_COPY_FILES += \
-    vendor/unholy/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/unholy/prebuilt/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
 # Extra packages
 PRODUCT_PACKAGES += \
@@ -53,17 +53,6 @@ PRODUCT_PACKAGES += \
     Turbo \
     PixelLauncherPrebuilt
 
-# Only build with Magisk if HAS_ROOT is not equal to false
-ifneq ($(HAS_ROOT),false)
-    # Magisk Manager
-    PRODUCT_PACKAGES += \
-        MagiskManager
-
-    # Copy Magisk zip
-    PRODUCT_COPY_FILES += \
-        vendor/unholy/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
-endif
-
 # DU Utils Library
 PRODUCT_PACKAGES += \
     org.dirtyunicorns.utils
@@ -73,11 +62,26 @@ PRODUCT_BOOT_JARS += \
 
 # Init.d script support
 PRODUCT_COPY_FILES += \
-    vendor/unholy/prebuilt/common/bin/sysinit:system/bin/sysinit \
-    vendor/unholy/prebuilt/common/etc/init.d.rc:root/init.d.rc
+    vendor/unholy/prebuilt/bin/sysinit:system/bin/sysinit \
+    vendor/unholy/prebuilt/etc/init.d.rc:root/init.d.rc
+
+# userinit support
+PRODUCT_COPY_FILES += \
+    vendor/unholy/prebuilt/etc/init.d/90userinit:system/etc/init.d/90userinit
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/unholy/prebuilt/common/addon.d/50-unholy.sh:system/addon.d/50-unholy.sh \
-    vendor/unholy/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/unholy/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions
+    vendor/unholy/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh \
+    vendor/unholy/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/unholy/prebuilt/bin/50-unholy.sh:system/addon.d/50-unholy.sh
+
+# Magisk Manager
+PRODUCT_PACKAGES += \
+    MagiskManager
+
+# Copy Magisk zip
+PRODUCT_COPY_FILES += \
+    vendor/unholy/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
+
+# Pull in Prebuilt applications 
+$(call inherit-product-if-exists, vendor/prebuilt/prebuilt.mk)
