@@ -75,6 +75,8 @@ PRODUCT_COPY_FILES += \
     vendor/unholy/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/unholy/prebuilt/bin/50-unholy.sh:system/addon.d/50-unholy.sh
 
+#Only build Magisk if defined in device config
+ifeq ($(DEFAULT_ROOT_METHOD),magisk)
 # Magisk Manager
 PRODUCT_PACKAGES += \
     MagiskManager
@@ -82,6 +84,7 @@ PRODUCT_PACKAGES += \
 # Copy Magisk zip
 PRODUCT_COPY_FILES += \
     vendor/unholy/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
+endif
 
 # Pull in Prebuilt applications 
 $(call inherit-product-if-exists, vendor/prebuilt/prebuilt.mk)

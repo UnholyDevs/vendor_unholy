@@ -31,6 +31,9 @@ $(call inherit-product, vendor/unholy/configs/unholy_common.mk)
 # Inherit device configuration
 $(call inherit-product, device/motorola/shamu/aosp_shamu.mk)
 
+# Include Magisk by default
+DEFAULT_ROOT_METHOD := magisk
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := shamu
 PRODUCT_NAME := unholy_shamu
