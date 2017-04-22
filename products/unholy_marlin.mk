@@ -15,6 +15,9 @@
 # limitations under the License.
 #
 
+# Inherit arm64 phone gapps
+$(call inherit-product-if-exists, vendor/gapps/gapps.mk)
+
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
