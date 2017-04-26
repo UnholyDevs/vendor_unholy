@@ -34,6 +34,9 @@ PRODUCT_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
 
+# Copy init file
+PRODUCT_COPY_FILES += vendor/unholy/prebuilt/root/init.unholy.rc:root/init.unholy.rc
+
 # Bootanimation
 PRODUCT_COPY_FILES += \
     vendor/unholy/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
