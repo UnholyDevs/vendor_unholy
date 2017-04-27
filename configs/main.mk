@@ -42,5 +42,4 @@ include vendor/unholy/configs/version.mk
 
 # Main Required Packages
 PRODUCT_PACKAGES += \
-    Launcher3 \
     LiveWallpapersPicker
