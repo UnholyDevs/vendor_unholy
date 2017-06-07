@@ -22,11 +22,8 @@ TARGET_SCREEN_WIDTH := 1440
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Get the long list of APNs
-PRODUCT_COPY_FILES := device/motorola/shamu/apns-conf.xml:system/etc/apns-conf.xml
-
 # Inherit some common Unholy stuff.
-$(call inherit-product, vendor/unholy/configs/unholy_common.mk)
+$(call inherit-product, vendor/unholy/configs/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/motorola/shamu/aosp_shamu.mk)

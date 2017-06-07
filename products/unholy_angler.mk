@@ -12,7 +12,7 @@
 # limitations under the License.
 
 # Inherit common unholiness
-$(call inherit-product, vendor/unholy/configs/unholy_common.mk)
+$(call inherit-product, vendor/unholy/configs/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/huawei/angler/aosp_angler.mk)
