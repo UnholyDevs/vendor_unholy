@@ -22,6 +22,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.adb.enable=1 \
     ro.com.google.ime.theme_id=5
 
+# For scrolling
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.min.fling_velocity=160 \
+    ro.max.fling_velocity=20000
+
 $(call inherit-product, vendor/unholy/configs/main.mk)
 
 # Telephony packages
