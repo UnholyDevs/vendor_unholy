@@ -34,5 +34,5 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 # Device Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=sailfish \
-    BUILD_FINGERPRINT=google/sailfish/sailfish:7.1.2/NHG47Q/4146032:user/release-keys \
-    PRIVATE_BUILD_DESC="sailfish-user 7.1.2 NHG47Q 4146032 release-keys"
+    BUILD_FINGERPRINT=google/sailfish/sailfish:7.1.2/NZH54D/4146044:user/release-keys \
+    PRIVATE_BUILD_DESC="sailfish-user 7.1.2 NZH54D 4146044 release-keys"
