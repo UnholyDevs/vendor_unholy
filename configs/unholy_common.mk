@@ -18,7 +18,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1 \
     ro.adb.secure=0 \
     persist.service.adb.enable=1 \
-    ro.com.google.ime.theme_id=5
+    ro.com.google.ime.theme_id=5 \
+    persist.sys.disable_rescue=true
 
 $(call inherit-product, vendor/unholy/configs/main.mk)
 
