@@ -71,9 +71,9 @@ PRODUCT_COPY_FILES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/unholy/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/unholy/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/unholy/prebuilt/bin/50-unholy.sh:system/addon.d/50-unholy.sh
+    vendor/unholy/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/unholy/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/unholy/prebuilt/bin/50-base.sh:system/addon.d/50-base.sh \
 
 # Disable Rescue Party
 PRODUCT_PROPERTY_OVERRIDES += \
