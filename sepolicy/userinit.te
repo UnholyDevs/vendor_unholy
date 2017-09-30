@@ -1,3 +1,0 @@
-type userinit_exec, exec_type, file_type;
-
-allow userinit_exec userinit_prop:property_service set;

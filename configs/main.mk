@@ -20,8 +20,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-google \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.error.receiver.system.apps=com.google.android.gms \
-    ro.setupwizard.require_network=any \
-    ro.setupwizard.mode=OPTIONAL \
+    ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dataroaming=false \
     ro.setupwizard.rotation_locked=true \
     ro.opa.eligible_device=true
@@ -33,9 +32,6 @@ PRODUCT_PACKAGE_OVERLAYS += \
 # Include explicitly to work around Facelock issues
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
-
-# Copy init file
-PRODUCT_COPY_FILES += vendor/unholy/prebuilt/root/init.unholy.rc:root/init.unholy.rc
 
 # Bootanimation
 PRODUCT_COPY_FILES += \

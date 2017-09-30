@@ -20,11 +20,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.adb.enable=1 \
     ro.com.google.ime.theme_id=5
 
-# For scrolling
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.min.fling_velocity=160 \
-    ro.max.fling_velocity=20000
-
 $(call inherit-product, vendor/unholy/configs/main.mk)
 
 # Telephony packages
@@ -68,10 +63,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/unholy/prebuilt/bin/sysinit:system/bin/sysinit \
     vendor/unholy/prebuilt/etc/init.d.rc:root/init.d.rc
-
-# userinit support
-PRODUCT_COPY_FILES += \
-    vendor/unholy/prebuilt/etc/init.d/90userinit:system/etc/init.d/90userinit
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
