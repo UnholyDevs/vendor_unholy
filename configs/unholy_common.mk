@@ -86,5 +86,9 @@ PRODUCT_COPY_FILES += \
     vendor/unholy/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
 endif
 
+# Disable Rescue Party
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.disable_rescue=true
+
 # Pull in Prebuilt applications 
 $(call inherit-product-if-exists, vendor/prebuilt/prebuilt.mk)
