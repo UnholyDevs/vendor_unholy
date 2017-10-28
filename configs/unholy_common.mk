@@ -58,11 +58,11 @@ PRODUCT_PACKAGES += \
     #OmniStyle
 
 # DU Utils Library
-#PRODUCT_PACKAGES += \
-    #org.dirtyunicorns.utils
+PRODUCT_PACKAGES += \
+    org.dirtyunicorns.utils
 
-#PRODUCT_BOOT_JARS += \
-    #org.dirtyunicorns.utils
+PRODUCT_BOOT_JARS += \
+    org.dirtyunicorns.utils
 
 # Init.d script support
 PRODUCT_COPY_FILES += \
