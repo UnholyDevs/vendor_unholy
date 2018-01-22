@@ -64,6 +64,10 @@ PRODUCT_PACKAGES += \
 #PRODUCT_BOOT_JARS += \
     #org.dirtyunicorns.utils
 
+# Packages
+PRODUCT_PACKAGES += \
+    SystemDarkTheme
+
 # Init.d script support
 PRODUCT_COPY_FILES += \
     vendor/unholy/prebuilt/bin/sysinit:system/bin/sysinit \
