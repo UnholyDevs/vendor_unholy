@@ -66,6 +66,7 @@ PRODUCT_PACKAGES += \
 
 # Packages
 PRODUCT_PACKAGES += \
+    SettingsDarkTheme \
     SystemDarkTheme
 
 # Init.d script support
