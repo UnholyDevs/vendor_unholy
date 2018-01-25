@@ -67,6 +67,7 @@ PRODUCT_PACKAGES += \
 # Packages
 PRODUCT_PACKAGES += \
     DuiDarkTheme \
+    GBoardDarkTheme \
     SettingsDarkTheme \
     SystemDarkTheme
 
