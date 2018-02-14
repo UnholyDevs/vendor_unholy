@@ -64,12 +64,12 @@ PRODUCT_PACKAGES += \
 #PRODUCT_BOOT_JARS += \
     #org.dirtyunicorns.utils
 
-# Packages
+# Overlays
 PRODUCT_PACKAGES += \
-    DuiDarkTheme \
-    GBoardDarkTheme \
-    SettingsDarkTheme \
-    SystemDarkTheme
+    DuiDark \
+    GBoardDark \
+    SettingsDark \
+    SystemDark
 
 # Init.d script support
 PRODUCT_COPY_FILES += \
