@@ -21,9 +21,6 @@ $(call inherit-product, device/huawei/angler/aosp_angler.mk)
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
-# Include Magisk by default
-DEFAULT_ROOT_METHOD := magisk
-
 # Override AOSP build properties
 PRODUCT_NAME := unholy_angler
 PRODUCT_DEVICE := angler

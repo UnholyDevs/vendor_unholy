@@ -75,17 +75,6 @@ PRODUCT_COPY_FILES += \
     vendor/unholy/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/unholy/prebuilt/bin/50-unholy.sh:system/addon.d/50-unholy.sh
 
-#Only build Magisk if defined in device config
-ifeq ($(DEFAULT_ROOT_METHOD),magisk)
-# Magisk Manager
-PRODUCT_PACKAGES += \
-    MagiskManager
-
-# Copy Magisk zip
-PRODUCT_COPY_FILES += \
-    vendor/unholy/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
-endif
-
 # Disable Rescue Party
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.disable_rescue=true
