@@ -35,5 +35,5 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 # Device Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=marlin \
-    PRIVATE_BUILD_DESC="marlin-user 8.1.0 OPM1.171019.016 4503492 release-keys" \
-	BUILD_FINGERPRINT="google/marlin/marlin:8.1.0/OPM1.171019.016/4503492:user/release-keys"
+    PRIVATE_BUILD_DESC="marlin-user 8.1.0 OPM1.171019.021 4565141 release-keys" \
+	BUILD_FINGERPRINT="google/marlin/marlin:8.1.0/OPM1.171019.021/4565141:user/release-keys"
