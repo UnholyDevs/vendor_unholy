@@ -53,7 +53,6 @@ PRODUCT_PACKAGES += \
     LockClock \
     Terminal \
     Turbo \
-    PixelLauncherPrebuilt
     #ThemeInterfacer
     #OmniStyle
 
