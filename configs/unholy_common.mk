@@ -50,9 +50,10 @@ PRODUCT_COPY_FILES += \
 
 # Extra packages
 PRODUCT_PACKAGES += \
+    Launcher3 \
     LockClock \
     Terminal \
-    Turbo \
+    Turbo
     #ThemeInterfacer
     #OmniStyle
 
