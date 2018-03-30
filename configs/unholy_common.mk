@@ -92,6 +92,13 @@ PRODUCT_PACKAGES += \
     YellowAccent \
     WhiteAccent
 
+# BlackAF Theme
+PRODUCT_PACKAGES += \
+    DuiBlackAF \
+    GBoardBlackAF \
+    SettingsBlackAF \
+    SystemBlackAF
+
 # Init.d script support
 PRODUCT_COPY_FILES += \
     vendor/unholy/prebuilt/bin/sysinit:system/bin/sysinit \
