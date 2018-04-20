@@ -19,9 +19,6 @@
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
-# Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-
 # Inherit some common Unholy stuff.
 $(call inherit-product, vendor/unholy/configs/common_full_phone.mk)
 
@@ -42,5 +39,5 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 # Device Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=shamu \
-    BUILD_FINGERPRINT=google/shamu/shamu:7.1.1/N8I11B/4171878:user/release-keys \
-    PRIVATE_BUILD_DESC="shamu-user 7.1.1 N8I11B 4171878 release-keys"
+    BUILD_FINGERPRINT=google/shamu/shamu:7.1.1/N6F27M/4299435:user/release-keys \
+    PRIVATE_BUILD_DESC="shamu-user 7.1.1 N6F27M 4299435 release-keys"
